@@ -3,8 +3,11 @@ class CatsController < ApplicationController
 
   # GET /cats
   def index
-    @cats = Cat.all
-    @cats = Cat.page(params[:page]).per(10)
+    @search = Cat.ransack(params[:q])
+
+    @search.sorts = 'id desc' if @search.sorts.empty?
+
+    @cats = @search.result.page(params[:page])
   end
 
   # GET /cats/1
