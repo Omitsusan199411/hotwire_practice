@@ -1,0 +1,4 @@
+<%= turbo_stream.replace dom_id(@cat) do %>
+	<%= render partial: 'cats/cat', locals: { cat: @cat } %>
+<% end %>
+<%= turbo_stream_flash %>
