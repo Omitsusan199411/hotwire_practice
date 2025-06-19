@@ -19,9 +19,10 @@
             <%= render "sidebar"%>
           </div>
           <div class="col my-4">
-            <%= render "flash" %>
-            <%= yield %>
+            <div id="flash">
+              <%= render "flash" %>
           </div>
+          <%= yield %>
       </div>
     </div>
   </body>
